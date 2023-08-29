@@ -8,7 +8,7 @@ interface ValueProps {
 }
 
 const Value: FC<ValueProps> = ({ label, value }) => (
-  <View style={styles.valueContainer}>
+  <View>
     <Text style={styles.label}>{label}</Text>
     <Text style={styles.value}>{value}</Text>
   </View>
@@ -17,11 +17,11 @@ const Value: FC<ValueProps> = ({ label, value }) => (
 export default function App() {
   return (
     <View style={styles.container}>
-      <View style={{ flexDirection: 'row' }}>
+      <View style={styles.values}>
         <Value label="Steps" value="1219" />
-        <Value label="Distance" value="0,75" />
+        <Value label="Distance" value="0,75km" />
+        <Value label="Flights Climbed" value="12" />
       </View>
-      <Value label="Flights Climbed" value="0,75km" />
       <StatusBar style="auto" />
     </View>
   );
@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     padding: 12,
   },
-  valueContainer: { marginRight: 50, marginVertical: 10 },
+  values: { flexDirection: 'row', gap: 25, flexWrap: 'wrap' },
   label: { color: '#fff', fontSize: 20 },
-  value: { fontSize: 35, color: '#AFB3BE', fontWeight: '500' },
+  value: { fontSize: 45, color: '#AFB3BE', fontWeight: '500' },
 });
