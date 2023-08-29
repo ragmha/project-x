@@ -1,3 +1,4 @@
+import { AntDesign } from '@expo/vector-icons';
 import { FC, useEffect } from 'react';
 import { View } from 'react-native';
 import Animated, { useAnimatedProps, useSharedValue, withTiming } from 'react-native-reanimated';
@@ -50,6 +51,12 @@ const RingProgress: FC<RingProgressProps> = ({ radius = 100, strokeWidth = 35, p
         <Circle {...circleDefaultProps} opacity={0.2} />
         <AnimatedCircle animatedProps={animatedProps} {...circleDefaultProps} />
       </SVG>
+      <AntDesign
+        name="arrowright"
+        size={strokeWidth * 0.8}
+        color="black"
+        style={{ position: 'absolute', alignSelf: 'center', top: strokeWidth * 0.1 }}
+      />
     </View>
   );
 };
