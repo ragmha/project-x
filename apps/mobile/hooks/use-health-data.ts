@@ -95,6 +95,8 @@ export const useHealthData = (date: Date): UseHealthData => {
       setFlights(flightsCount);
       setDistance(distanceCount);
 
+      // Save data to Supabase once current and before midnight
+
       const { data, error } = await supabase.from('health_data').upsert([
         {
           date: new Date().toISOString(),
